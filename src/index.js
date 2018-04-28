@@ -4,9 +4,7 @@ import City from './city';
 
 window.onload = function() {
     ReactDOM.render(
-        <div>
-            <City />
-        </div>,
+            <City />,
         document.getElementById('root')
     );
 };

@@ -1,4 +1,4 @@
-const cityList =
+const mycityList =
 {
     "E": [{
         "pinyin": "ezhou",
@@ -17874,4 +17874,4 @@ const cityList =
     }]
 };
 
-export default {cityList};
+export default {mycityList};

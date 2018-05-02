@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from "react-dom";
 import cityList from './cityList';
-import cityBox from './cityBox';
+import CityBox from './cityBox';
 
 export default class extends React.Component {
 
@@ -9,28 +9,26 @@ export default class extends React.Component {
         super(props);
 
         this.state = {
-            city: cityList,
+            city: cityList.mycityList,
         };
     }
     
     render() {
-        //console.log(this.state.city);
-        let $city = this.state.city.mycityList;
-
-        /*Object.keys($city).map((item)=>{
-            Object.values($city[item]).map((v)=>{
-                console.log(v.name);
-            })
-        })*/
+        let $city = this.state.city;
 
         return (
-            <div className="allCity">
+            <ul className="allCity">
             {
-                Object.keys($city).map((item)=>{
-                    <cityBox character={item} data={$city[item]} />
+                Object.keys($city).sort().map((item) => {
+                    return (
+                        <li key={item}>
+                            <h3>{item}</h3>
+                            <CityBox data={$city[item]}/>
+                        </li>
+                    )
                 })
             }
-            </div>
+            </ul>
         )
     }
 }
